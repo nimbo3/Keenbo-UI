@@ -6,6 +6,10 @@
     border: white;
 }
 
+.page {
+    border-radius: 40px;
+}
+
 .Submit-button {
 
 }
