@@ -13,13 +13,11 @@ function NotFound() {
 export function Router() {
     return (
         <BrowserRouter>
-            <div>
                 <Switch>
                     <Route path="/" exact component={App}/>
                     <Route path="/search" component={PagesContainer}/>
                     <Route component={NotFound}/>
                 </Switch>
-            </div>
         </BrowserRouter>
     );
 }
