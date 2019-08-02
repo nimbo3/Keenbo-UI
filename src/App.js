@@ -10,7 +10,7 @@ function App() {
             <header className="App-header">
                 <div className="container">
                     <div className="row d-flex justify-content-center">
-                        <img src={logo} className="p-4 col-6 App-logo" alt="logo"/>
+                        <img src={logo} className="p-4 col-5 App-logo" alt="logo"/>
                     </div>
                     <div className="d-flex justify-content-center">
                         <div className="col-8">
