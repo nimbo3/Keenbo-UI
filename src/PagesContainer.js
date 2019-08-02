@@ -8,7 +8,7 @@ export class PagesContainer extends React.Component {
         super(props);
         this.state = {pages: [], isLoaded: false};
         let query = this.props.location.search;
-        let url = 'http://5.9.147.141:4567/search' + query;
+        let url = 'http://5.9.147.141:4567/search' + decodeURIComponent(query);
         console.log("sending request to: ", url);
         fetch(url).then(res => res.json()).then(pages => {
             console.log(pages);
