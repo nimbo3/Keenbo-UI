@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Page} from "./Page";
-import logo from "./logo.png";
+import logo from "../logo.png";
 import SearchForm from "./SearchForm";
 
 export class PagesContainer extends React.Component {

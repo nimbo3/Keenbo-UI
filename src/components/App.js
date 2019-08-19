@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.png';
+import logo from '../logo.png';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchForm from "./SearchForm";
