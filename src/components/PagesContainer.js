@@ -46,7 +46,7 @@ export class PagesContainer extends React.Component {
                 </div>
             </nav>
             {spinner}
-            <div className="mt-5 col-8">
+            <div className="mt-5 col-8 p-1">
                 {pages.map(page => <Page data={page}/>)}
             </div>
 

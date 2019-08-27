@@ -12,3 +12,4 @@ export const VIS_NETWORK_OPTIONS = {
 };
 
 export const SERVER_IP_ADDRESS = "5.9.147.141:4567";
+export const RESULT_CONTENT_SIZE = 500;
