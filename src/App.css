@@ -25,3 +25,12 @@
 .App-link {
     color: #61dafb;
 }
+
+.highlighted {
+    color: #292929;
+    font-weight: bold;
+}
+
+.result-content {
+    color: #3a3a3a;
+}

@@ -2,13 +2,14 @@ import * as React from "react";
 import {Page} from "./Page";
 import logo from "../logo.png";
 import SearchForm from "./SearchForm";
+import {SERVER_IP_ADDRESS} from "../constants";
 
 export class PagesContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {pages: [], isLoaded: false};
         let query = this.props.location.search;
-        let url = 'http://5.9.147.141:4567/search' + decodeURIComponent(query);
+        let url = 'http://' + SERVER_IP_ADDRESS + '/search' + decodeURIComponent(query);
         console.log("sending request to: ", url);
         fetch(url).then(res => res.json()).then(pages => {
             console.log(pages);
@@ -45,8 +46,8 @@ export class PagesContainer extends React.Component {
                 </div>
             </nav>
             {spinner}
-            <div className="mt-5">
-                {pages.map(page => <Page link={page.link} title={page.title}/>)}
+            <div className="mt-5 col-8">
+                {pages.map(page => <Page data={page}/>)}
             </div>
 
         </div>
