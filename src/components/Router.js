@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import React from "react";
 import App from "./App";
 import {PagesContainer} from "./PagesContainer";
+import {SitesGraph} from "./SitesGraph";
 
 function NotFound() {
     return (<div>
@@ -16,6 +17,7 @@ export function Router() {
                 <Switch>
                     <Route path="/" exact component={App}/>
                     <Route path="/search" component={PagesContainer}/>
+                    <Route path="/sites-graph" component={SitesGraph}/>
                     <Route component={NotFound}/>
                 </Switch>
         </BrowserRouter>
