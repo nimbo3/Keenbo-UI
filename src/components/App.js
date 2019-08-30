@@ -3,10 +3,16 @@ import logo from '../logo.png';
 import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchForm from "./SearchForm";
+import {Auth} from "./Auth";
 
 function App() {
     return (
         <div className="App">
+            <nav className="navbar bg-dark">
+                <div className="ml-auto">
+                    <Auth/>
+                </div>
+            </nav>
             <header className="App-header">
                 <div className="container">
                     <div className="row d-flex justify-content-center">

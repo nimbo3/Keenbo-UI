@@ -14,7 +14,7 @@ export class Page extends React.Component {
                     <a href={link}>{title}</a>
                 </h4>
                 <a className="text-success m-0" href={link}>{link}</a>
-                <p dangerouslySetInnerHTML={{__html: content}} class="result-content"/>
+                <p dangerouslySetInnerHTML={{__html: content}} className="result-content"/>
             </div>
         );
     }
