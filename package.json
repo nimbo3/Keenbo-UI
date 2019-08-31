@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "proper": "^0.5.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "vis": "^4.21.0-EOL"

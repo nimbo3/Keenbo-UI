@@ -19,6 +19,16 @@ export class PagesContainer extends React.Component {
         });
     }
 
+    static getSpinner() {
+        return (
+            <div className="min-vh-100 d-flex justify-content-center align-items-center">
+                <div className="row spinner-border" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
+            </div>
+        );
+    }
+
     render() {
         let query = this.props.location.search;
         if (query.length >= 7)
@@ -33,10 +43,12 @@ export class PagesContainer extends React.Component {
 
 
         return <div>
-            <nav className="an navbar bg-dark fixed-top container-fluid">
+            <nav className="an navbar bg-dark container-fluid">
                 <div className="row w-100">
                     <div className="col-auto">
-                        <img src={logo} className="img-fluid mr-3" alt="logo" style={{"height": "40px"}}/>
+                        <a href="/">
+                            <img src={logo} className="img-fluid mr-3" alt="logo" style={{"height": "40px"}}/>
+                        </a>
                     </div>
                     <div className="col-6">
                         <SearchForm defaultValue={query} small={true}/>
@@ -49,16 +61,6 @@ export class PagesContainer extends React.Component {
             {content}
         </div>
     };
-
-    static getSpinner() {
-        return (
-            <div className="min-vh-100 d-flex justify-content-center align-items-center">
-                <div className="row spinner-border" role="status">
-                    <span className="sr-only">Loading...</span>
-                </div>
-            </div>
-        );
-    }
 
     getPages() {
         let pages = this.state.pages;
