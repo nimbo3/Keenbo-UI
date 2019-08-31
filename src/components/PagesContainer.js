@@ -65,8 +65,8 @@ export class PagesContainer extends React.Component {
     getPages() {
         let pages = this.state.pages;
         return (
-            <div className="mt-5 col-8 p-1">
-                {pages.map(page => <Page data={page}/>)}
+            <div className="mt-1 col-8 p-1">
+                {pages.map((value, index)=> <Page key={index} data={value}/>)}
             </div>
         )
     }
