@@ -63,48 +63,56 @@ export class Auth extends React.Component {
                  aria-labelledby="registerModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="registerModalLabel">Register</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <div className="container">
-                                <div className="text-left">
-                                    <ul className="text-danger">
-                                        {errors === "" ? "" :
-                                            errors.split("\n").map((x, index) =>
-                                                <li key={index}>{x}</li>)
-                                        }
-                                    </ul>
-                                </div>
-                                <div className="row">
-                                    <input type="text" placeholder="Name" name="name" id="registerName"
-                                           className="form-control rounded-pill"/>
-                                </div>
-                                <div className="row">
-                                    <input type="text" placeholder="Username" name="username" id="registerUsername"
-                                           className="form-control rounded-pill"/>
-                                </div>
-                                <div className="row">
-                                    <input type="password" placeholder="Password" name="password" id="registerPassword"
-                                           className="form-control rounded-pill"/>
-                                </div>
-                                <div className="row">
-                                    <input type="password" placeholder="Confirm password" name="re_password"
-                                           id="registerRePassword" className="form-control rounded-pill"/>
-                                </div>
-                                <div className="row">
-                                    <input type="email" placeholder="Email" name="email" id="registerMail"
-                                           className="form-control rounded-pill"/>
+                        <form onSubmit={(e) => {
+                            e.preventDefault();
+                        }}>
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="registerModalLabel">Register</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <div className="container">
+                                    <div className="text-left">
+                                        <ul className="text-danger">
+                                            {errors === "" ? "" :
+                                                errors.split("\n").map((x, index) =>
+                                                    <li key={index}>{x}</li>)
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div className="row">
+                                        <input type="text" placeholder="Name" name="name" id="registerName"
+                                               className="form-control rounded-pill"/>
+                                    </div>
+                                    <div className="row">
+                                        <input type="text" placeholder="Username" name="username" id="registerUsername"
+                                               className="form-control rounded-pill"/>
+                                    </div>
+                                    <div className="row">
+                                        <input type="password" placeholder="Password" name="password"
+                                               id="registerPassword"
+                                               className="form-control rounded-pill"/>
+                                    </div>
+                                    <div className="row">
+                                        <input type="password" placeholder="Confirm password" name="re_password"
+                                               id="registerRePassword" className="form-control rounded-pill"/>
+                                    </div>
+                                    <div className="row">
+                                        <input type="email" placeholder="Email" name="email" id="registerMail"
+                                               className="form-control rounded-pill"/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="modal-footer">
-                            <button className="btn btn-primary" onClick={this.handleRegister}>Register</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                            <div className="modal-footer">
+                                <button type="submit" className="btn btn-primary"
+                                        onClick={this.handleRegister}>Register
+                                </button>
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
@@ -118,37 +126,39 @@ export class Auth extends React.Component {
                  aria-labelledby="loginModalLabel" aria-hidden="true">
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="loginModalLabel">Login</h5>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            <div className="container">
-                                <div className="text-left">
-                                    <ul className="text-danger">
-                                        {errors === "" ? "" :
-                                            errors.split("\n").map((x, index) =>
-                                                <li key={index}>{x}</li>)
-                                        }
-                                    </ul>
-                                </div>
-                                <div className="row">
-                                    <input type="text" placeholder="Username" name="username" id="loginUsername"
-                                           className="form-control rounded-pill"/>
-                                </div>
-                                <div className="row">
-                                    <input type="password" placeholder="Password" name="password" id="loginPassword"
-                                           className="form-control rounded-pill"/>
-                                </div>
-
+                        <form onSubmit={e => e.preventDefault()}>
+                            <div className="modal-header">
+                                <h5 className="modal-title" id="loginModalLabel">Login</h5>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                        </div>
-                        <div className="modal-footer">
-                            <button className="btn btn-primary" onClick={this.handleLogin}>Login</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                            <div className="modal-body">
+                                <div className="container">
+                                    <div className="text-left">
+                                        <ul className="text-danger">
+                                            {errors === "" ? "" :
+                                                errors.split("\n").map((x, index) =>
+                                                    <li key={index}>{x}</li>)
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div className="row">
+                                        <input type="text" placeholder="Username" name="username" id="loginUsername"
+                                               className="form-control rounded-pill"/>
+                                    </div>
+                                    <div className="row">
+                                        <input type="password" placeholder="Password" name="password" id="loginPassword"
+                                               className="form-control rounded-pill"/>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div className="modal-footer">
+                                <button className="btn btn-primary" onClick={this.handleLogin}>Login</button>
+                                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
