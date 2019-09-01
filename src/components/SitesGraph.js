@@ -27,6 +27,13 @@ export class SitesGraph extends React.Component {
         });
     }
 
+    static handleClick(inp) {
+        let url = inp.nodes[0];
+        console.log("redirecting ", url);
+        if (url)
+            window.location = '/sites-graph?link=' + url;
+    }
+
     componentDidMount() {
     }
 
@@ -36,11 +43,5 @@ export class SitesGraph extends React.Component {
                 <div ref="graph" className="col-12 container"/>
             </div>
         );
-    }
-
-    static handleClick(inp){
-        let url =  inp.nodes[0];
-        console.log("redirecting ",url);
-        window.location = '/sites-graph?link=' + url;
     }
 }
