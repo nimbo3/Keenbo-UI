@@ -9,8 +9,8 @@ function App() {
     return (
         <div className="App">
             <nav className="navbar bg-dark">
-                <a href="sites-graph" className="btn btn-primary rounded-pill">Sites graph</a>
-                <a href="words-graph" className="ml-1 btn btn-primary rounded-pill">Words graph</a>
+                <a href={"sites-graph"} className="btn btn-primary rounded-pill">Sites graph</a>
+                <a href={"words-graph"} className="ml-1 btn btn-primary rounded-pill">Words graph</a>
                 <div className="ml-auto">
                     <Auth/>
                 </div>

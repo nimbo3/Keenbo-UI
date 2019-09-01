@@ -1,4 +1,4 @@
-export const VIS_NETWORK_OPTIONS = {
+export const SITES_GRAPH_VIS_NETWORK_OPTIONS = {
     nodes: {
         mass: 2,
         shape: "circle"
@@ -7,6 +7,16 @@ export const VIS_NETWORK_OPTIONS = {
         arrows: {
             middle: {enabled: true}
         },
+        length: 100
+    },
+};
+
+export const WORDS_GRAPH_VIS_NETWORK_OPTIONS = {
+    nodes: {
+        mass: 2,
+        shape: "circle"
+    },
+    edges: {
         length: 100
     },
 };

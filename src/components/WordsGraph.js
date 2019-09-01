@@ -1,12 +1,12 @@
 import * as React from "react";
 import {DataSet, Network} from 'vis';
-import {SERVER_IP_ADDRESS, SITES_GRAPH_VIS_NETWORK_OPTIONS} from "../constants";
+import {SERVER_IP_ADDRESS, WORDS_GRAPH_VIS_NETWORK_OPTIONS} from "../constants";
 
-export class SitesGraph extends React.Component {
+export class WordsGraph extends React.Component {
 
     constructor(props) {
         super(props);
-        let url = 'http://' + SERVER_IP_ADDRESS + '/site-graph';
+        let url = 'http://' + SERVER_IP_ADDRESS + '/word-graph';
         console.log("sending request to: ", url);
         fetch(url).then(res => res.json()).then(graph => {
             console.log(graph);
@@ -20,7 +20,7 @@ export class SitesGraph extends React.Component {
             };
             console.log(data);
             console.log("creating network");
-            this.network = new Network(this.refs.graph, data, SITES_GRAPH_VIS_NETWORK_OPTIONS);
+            this.network = new Network(this.refs.graph, data, WORDS_GRAPH_VIS_NETWORK_OPTIONS);
             console.log("network created");
         });
     }
