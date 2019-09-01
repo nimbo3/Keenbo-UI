@@ -30,7 +30,7 @@ export class WordsGraph extends React.Component {
 
     render() {
         return (
-            <div className="row">
+            <div className="row min-vh-100 min-vw-100">
                 <div ref="graph" className="col-12 container"/>
             </div>
         );
