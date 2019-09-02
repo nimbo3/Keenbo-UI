@@ -1,14 +1,12 @@
 import React, {Component} from "react";
+import {SEARCH_MODES} from "../constants";
 
 class SearchForm extends Component {
-    const
-    SEARCH_MODES = ["Simple", "Fuzzy", "Exact"]
-
     constructor(props) {
         super(props);
         this.state = {
             searchMode: 0
-        }
+        };
         this.submit = this.submit.bind(this);
         this.searchInput = this.searchInput.bind(this);
         this.handleChangeSearchMode = this.handleChangeSearchMode.bind(this)
@@ -40,7 +38,7 @@ class SearchForm extends Component {
     searchInput() {
         let searchMode = this.state.searchMode;
         const {small} = this.props;
-        return <div className={small?"col-9":""}>
+        return <div className={small ? "col-9" : ""}>
             <div className="input-group">
                 <div className="input-group-prepend ">
                     <div className="input-group-text dropdown dropdown-toggle"
@@ -49,14 +47,14 @@ class SearchForm extends Component {
                              borderRadius: "2.25rem 0% 0% 2.25rem",
                              cursor: "pointer"
                          }}>
-                        {this.SEARCH_MODES[searchMode]}
+                        {SEARCH_MODES[searchMode]}
                     </div>
                     <div className="dropdown-menu">
                         {
-                            this.SEARCH_MODES.map((value, index) =>
+                            SEARCH_MODES.map((value, index) =>
                                 <button className={"dropdown-item " + (searchMode === index ? "active" : "")}
                                         onClick={() => this.handleChangeSearchMode(index)}
-                                        key={index  }
+                                        key={index}
                                         type="button">{value}
                                 </button>)
                         }
