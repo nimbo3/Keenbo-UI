@@ -5,8 +5,8 @@ import * as queryString from "query-string";
 class SearchForm extends Component {
     constructor(props) {
         super(props);
-        let mode = this.props.mode;
-        if(!mode)
+        let mode = queryString.parse(window.location.search).mode;
+        if (!mode)
             mode = "0";
         this.state = {
             searchMode: parseInt(mode)
@@ -23,7 +23,7 @@ class SearchForm extends Component {
         let params = queryString.parse(window.location.search);
         params.query = input.value;
         let url = "/search?" + queryString.stringify(params);
-        console.log("url: "+ url);
+        console.log("url: " + url);
         window.location = url;
     }
 
@@ -85,8 +85,8 @@ class SearchForm extends Component {
     handleChangeSearchMode(searchMode) {
         let params = queryString.parse(window.location.search);
         params.mode = searchMode;
-        let url = "/search?" + queryString.stringify(params);
-        console.log("url: "+ url);
+        let url = (this.props.small ? "/search?" : "?") + queryString.stringify(params);
+        console.log("url: " + url);
         window.location = url;
     }
 }
