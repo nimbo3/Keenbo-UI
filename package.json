@@ -7,9 +7,9 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.15.0",
     "proper": "^0.5.1",
+    "query-string": "^6.8.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
     "vis": "^4.21.0-EOL"

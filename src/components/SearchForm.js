@@ -1,11 +1,15 @@
 import React, {Component} from "react";
 import {SEARCH_MODES} from "../constants";
+import * as queryString from "query-string";
 
 class SearchForm extends Component {
     constructor(props) {
         super(props);
+        let mode = this.props.mode;
+        if(!mode)
+            mode = "0";
         this.state = {
-            searchMode: 0
+            searchMode: parseInt(mode)
         };
         SearchForm.submit = SearchForm.submit.bind(this);
         this.searchInput = this.searchInput.bind(this);
@@ -13,16 +17,22 @@ class SearchForm extends Component {
     }
 
 
-    static submit() {
+    static submit(e) {
+        e.preventDefault();
         let input = document.getElementById("queryInput");
-        input.value = encodeURIComponent(input.value);
+        let params = queryString.parse(window.location.search);
+        params.query = input.value;
+        let url = "/search?" + queryString.stringify(params);
+        console.log("url: "+ url);
+        window.location = url;
     }
 
     render() {
         const {small} = this.props;
         let searchInput = this.searchInput();
         return (
-            <form className={small ? "" : "container-fluid"} action={"/search"} method="GET" onSubmit={SearchForm.submit}>
+            <form className={small ? "" : "container-fluid"} action={"/search"} method="GET"
+                  onSubmit={SearchForm.submit}>
                 <div className={small ? "row" : ""}>
                     {searchInput}
                     <div className={small ? "col-3" : ""}>
@@ -73,7 +83,11 @@ class SearchForm extends Component {
     }
 
     handleChangeSearchMode(searchMode) {
-        this.setState({searchMode})
+        let params = queryString.parse(window.location.search);
+        params.mode = searchMode;
+        let url = "/search?" + queryString.stringify(params);
+        console.log("url: "+ url);
+        window.location = url;
     }
 }
 

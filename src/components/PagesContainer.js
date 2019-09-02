@@ -4,6 +4,7 @@ import logo from "../logo.png";
 import SearchForm from "./SearchForm";
 import {SERVER_IP_ADDRESS} from "../constants";
 import {Auth} from "./Auth";
+import * as queryString from "query-string";
 
 export class PagesContainer extends React.Component {
     constructor(props) {
@@ -30,18 +31,14 @@ export class PagesContainer extends React.Component {
     }
 
     render() {
-        let query = this.props.location.search;
-        if (query.length >= 7)
-            query = query.substring(7);
-        query = decodeURIComponent(query);
-        query = decodeURIComponent(query);
         let content = "";
         if (this.state.isLoaded === false)
             content = PagesContainer.getSpinner();
         else
             content = this.getPages();
-
-
+        let params = queryString.parse(this.props.location.search);
+        let mode = params.mode;
+        let query = params.query;
         return <div>
             <nav className="an navbar bg-dark container-fluid">
                 <div className="row w-100">
@@ -51,7 +48,7 @@ export class PagesContainer extends React.Component {
                         </a>
                     </div>
                     <div className="col-6">
-                        <SearchForm defaultValue={query} small={true}/>
+                        <SearchForm defaultValue={query} small={true} mode={mode}/>
                     </div>
                     <div className="ml-auto">
                         <Auth/>
@@ -66,7 +63,7 @@ export class PagesContainer extends React.Component {
         let pages = this.state.pages;
         return (
             <div className="mt-1 col-8 p-1">
-                {pages.map((value, index)=> <Page key={index} data={value}/>)}
+                {pages.map((value, index) => <Page key={index} data={value}/>)}
             </div>
         )
     }

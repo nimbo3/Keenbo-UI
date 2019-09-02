@@ -22,7 +22,7 @@ function App() {
                     </div>
                     <div className="d-flex justify-content-center">
                         <div className="col-8">
-                            <SearchForm small={false}/>
+                            <SearchForm small={false} mode={0}/>
                         </div>
                     </div>
                 </div>
