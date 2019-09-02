@@ -7,23 +7,24 @@ class SearchForm extends Component {
         this.state = {
             searchMode: 0
         };
-        this.submit = this.submit.bind(this);
+        SearchForm.submit = SearchForm.submit.bind(this);
         this.searchInput = this.searchInput.bind(this);
         this.handleChangeSearchMode = this.handleChangeSearchMode.bind(this)
     }
 
 
-    submit() {
+    static submit() {
         let input = document.getElementById("queryInput");
         input.value = encodeURIComponent(input.value);
     }
 
     render() {
         const {small} = this.props;
+        let searchInput = this.searchInput();
         return (
-            <form className={small ? "" : "container-fluid"} action={"/search"} method="GET" onSubmit={this.submit}>
+            <form className={small ? "" : "container-fluid"} action={"/search"} method="GET" onSubmit={SearchForm.submit}>
                 <div className={small ? "row" : ""}>
-                    {this.searchInput()}
+                    {searchInput}
                     <div className={small ? "col-3" : ""}>
                         <div className={small ? "col-10" : "d-flex justify-content-center mt-5"}>
                             <input className={"btn btn-light ml-2 rounded-pill " + (small ? "" : "w-25")} type="submit"
