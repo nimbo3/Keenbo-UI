@@ -37,7 +37,7 @@ class SearchForm extends Component {
                     {searchInput}
                     <div className={small ? "col-3" : ""}>
                         <div className={small ? "col-10" : "d-flex justify-content-center mt-5"}>
-                            <input className={"btn btn-light ml-2 rounded-pill " + (small ? "" : "w-25")} type="submit"
+                            <input className={"btn btn-light ml-2 rounded-pill " + (small ? "" : "col-lg-4 col-auto")} type="submit"
                                    value="Search"/>
                         </div>
                     </div>
@@ -49,7 +49,7 @@ class SearchForm extends Component {
     searchInput() {
         let searchMode = this.state.searchMode;
         const {small} = this.props;
-        return <div className={small ? "col-9" : ""}>
+        return <div className={small ? "col-sm col-md col-lg-6" : ""}>
             <div className="input-group">
                 <div className="input-group-prepend ">
                     <div className="input-group-text dropdown dropdown-toggle"

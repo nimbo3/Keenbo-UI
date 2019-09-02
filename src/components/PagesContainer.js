@@ -40,14 +40,14 @@ export class PagesContainer extends React.Component {
         let mode = params.mode;
         let query = params.query;
         return <div>
-            <nav className="an navbar bg-dark container-fluid">
+            <nav className="navbar bg-dark container-fluid">
                 <div className="row w-100">
-                    <div className="col-auto">
+                    <div className="col-sm col-md col-lg-1">
                         <a href="/">
                             <img src={logo} className="img-fluid mr-3" alt="logo" style={{"height": "40px"}}/>
                         </a>
                     </div>
-                    <div className="col-6">
+                    <div className="col-6-lg col-sm col-md">
                         <SearchForm defaultValue={query} small={true} mode={mode}/>
                     </div>
                     <div className="ml-auto">
